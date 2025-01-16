@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblemon-whiteout",
+  "version": "1.6-fabric-1.0.0",
+  "name": "Cobblemon Whiteout",
+  "description": "What if players whited out if their last Pokemon fainted?",
+  "authors": ["TimInc aka Timothy Metcalfe"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "us.timinc.mc.cobblemon.shearems.Shearems"
+      }
+    ]
+  },
+  "mixins": [
+    "shearems.mixins.json"
+  ],
+  "depends": {
+    "java": ">=21",
+    "minecraft": ">=1.21.1",
+    "fabric": "*",
+    "cobblemon": ">=1.6.0 <1.7.0"
+  }
+}
