@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "cobblemon-whiteout",
+  "id": "cobblemon-shearems",
   "version": "1.6-fabric-1.0.0",
-  "name": "Cobblemon Whiteout",
-  "description": "What if players whited out if their last Pokemon fainted?",
+  "name": "Cobblemon Shearems",
+  "description": "Ever wanted to shear your Pokemon from Cobblemon? With loot tables??",
   "authors": ["TimInc aka Timothy Metcalfe"],
   "license": "MIT",
   "environment": "*",
