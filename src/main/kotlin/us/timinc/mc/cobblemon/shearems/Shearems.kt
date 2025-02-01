@@ -2,7 +2,6 @@
 
 package us.timinc.mc.cobblemon.shearems
 
-import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
 import net.fabricmc.api.ModInitializer
@@ -31,7 +30,7 @@ object Shearems : ModInitializer {
             pokemonEntity.pokemon,
             "pokeshear"
         )
-        drops.forEach{ drop ->
+        drops.forEach { drop ->
             val itemEntity = pokemonEntity.dropStack(drop) ?: return
             itemEntity.velocity = itemEntity.velocity.add(
                 ((pokemonEntity.random.nextFloat() - pokemonEntity.random.nextFloat()) * 0.1f).toDouble(),
