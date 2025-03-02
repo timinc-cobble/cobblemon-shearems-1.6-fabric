@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cobblemon-shearems",
-  "version": "1.6-fabric-1.0.1",
+  "version": "1.6-fabric-1.1.0",
   "name": "Cobblemon Shearems",
   "description": "Ever wanted to shear your Pokemon from Cobblemon? With loot tables??",
   "authors": ["TimInc aka Timothy Metcalfe"],
@@ -22,6 +22,7 @@
     "java": ">=21",
     "minecraft": ">=1.21.1",
     "fabric": "*",
-    "cobblemon": ">=1.6.0 <1.7.0"
+    "cobblemon": ">=1.6.0 <1.7.0",
+    "cobblemon_droploottables": "1.6-fabric-1.1.0"
   }
 }
