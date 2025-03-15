@@ -1,0 +1,466 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "droploottables:aspects",
+              "aspects": [
+                "color-white"
+              ]
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "droploottables:aspects",
+                "aspects": [
+                  "color-white",
+                  "color-black",
+                  "color-blue",
+                  "color-brown",
+                  "color-cyan",
+                  "color-gray",
+                  "color-green",
+                  "color-light_blue",
+                  "color-light_gray",
+                  "color-lime",
+                  "color-magenta",
+                  "color-orange",
+                  "color-purple",
+                  "color-red",
+                  "color-yellow",
+                  "color-pink"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:black_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-black"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blue_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-blue"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:brown_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-brown"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cyan_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-cyan"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gray_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-gray"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:green_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-green"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:light_blue_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-light_blue"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:light_gray_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-light_gray"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lime_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-lime"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:magenta_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-magenta"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:orange_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-orange"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:purple_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-purple"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:red_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-red"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:yellow_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-yellow"
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pink_wool"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": {
+            "type": "minecraft:uniform",
+            "min": 1,
+            "max": 3
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "droploottables:aspects",
+          "aspects": [
+            "color-pink"
+          ]
+        }
+      ]
+    }
+  ]
+}
