@@ -4,7 +4,8 @@
   "package": "us.timinc.mc.cobblemon.shearems.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "PokemonEntityMixin"
+    "cobblemon.PokemonEntityMixin",
+    "minecraft.ShearsDispenseItemBehaviorMixin"
   ],
   "client": [],
   "server": [],

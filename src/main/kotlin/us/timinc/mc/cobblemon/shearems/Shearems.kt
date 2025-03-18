@@ -5,55 +5,53 @@ package us.timinc.mc.cobblemon.shearems
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import net.fabricmc.api.ModInitializer
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.level.ServerLevel
-import net.minecraft.world.entity.player.Player
+import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.storage.loot.LootParams
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams
-import us.timinc.mc.cobblemon.droploottables.api.droppers.FormDropContext
-import us.timinc.mc.cobblemon.droploottables.lootconditions.LootConditions
 import us.timinc.mc.cobblemon.shearems.droppers.ShearingDropper
+import us.timinc.mc.cobblemon.shearems.events.PokemonShorn
+import us.timinc.mc.cobblemon.shearems.events.ShearemsEvents
 
 object Shearems : ModInitializer {
     const val MOD_ID = "shearems"
+    val shearingRegistry: MutableMap<PokemonEntity, Pair<ItemStack, ServerPlayer?>> = mutableMapOf()
 
-    override fun onInitialize() {}
+    override fun onInitialize() {
+        ShearingDropper.load()
+    }
 
-    fun dropShorn(
+    fun dispenserShearing(pokemonEntity: PokemonEntity, itemStack: ItemStack) {
+        shearingRegistry[pokemonEntity] = itemStack to null
+    }
+
+    fun interactShearing(pokemonEntity: PokemonEntity, itemStack: ItemStack, player: ServerPlayer) {
+        shearingRegistry[pokemonEntity] = itemStack to player
+    }
+
+    fun pokemonShorn(
         pokemonEntity: PokemonEntity,
-        shornBy: Player,
-        shornWith: ItemStack,
     ) {
-        val level = pokemonEntity.level()
-        if (level !is ServerLevel) {
-            return
-        }
-
-        val lootParams = LootParams(
-            level,
-            mapOf(
-                LootContextParams.ORIGIN to pokemonEntity.position(),
-                LootContextParams.THIS_ENTITY to pokemonEntity,
-                LootConditions.PARAMS.POKEMON_DETAILS to pokemonEntity.pokemon,
-                LootContextParams.TOOL to shornWith,
-                LootContextParams.DIRECT_ATTACKING_ENTITY to shornBy
+        val (tool, player) = shearingRegistry[pokemonEntity]
+            ?: throw Error("Attempted to complete shearing action for non-registered event for ${pokemonEntity.uuid}")
+        ShearemsEvents.POKEMON_SHORN_PRE.postThen(
+            PokemonShorn.Pre(
+                pokemonEntity.pokemon,
+                pokemonEntity,
+                tool,
+                player
             ),
-            mapOf(),
-            shornBy.luck
+            { },
+            {
+                ShearemsEvents.POKEMON_SHORN_POST.post(
+                    PokemonShorn.Post(
+                        pokemonEntity.pokemon,
+                        pokemonEntity,
+                        tool,
+                        player
+                    )
+                )
+            },
         )
-        val drops = ShearingDropper.getDrops(
-            lootParams,
-            FormDropContext(pokemonEntity.pokemon.form)
-        )
-
-        drops.forEach { drop ->
-            val itemEntity = pokemonEntity.spawnAtLocation(drop) ?: return
-            itemEntity.deltaMovement = itemEntity.deltaMovement.add(
-                ((pokemonEntity.random.nextFloat() - pokemonEntity.random.nextFloat()) * 0.1f).toDouble(),
-                (pokemonEntity.random.nextFloat() * 0.05f).toDouble(),
-                ((pokemonEntity.random.nextFloat() - pokemonEntity.random.nextFloat()) * 0.1f).toDouble()
-            )
-        }
+        shearingRegistry.remove(pokemonEntity)
     }
 
     fun modIdentifier(name: String): ResourceLocation {
